@@ -1,10 +1,16 @@
-<style>
-<?php include 'css/bootstrap.css'; ?>
-</style>
+<?php session_start(); ?>
 <?php include 'inc/header.php'; 
-echo '<head><b>Garden Site</b><br> Annoucements<br></head>';
-echo '&mdash<a href="login.php"> Login </a>&mdash';
-
+include 'inc/login_disp.php';
+echo '<b>Garden Site</b><br> Annoucements<br>';
+echo '<a href="login.php"> Login </a>';
+if (isset($_SESSION["username"]))
+{
+	display_login($_SESSION["username"]);
+}
+else
+{
+	display_no_login();
+}
 echo '<br><body>'; 
 //place code for each annoucment here
 echo 'This Section should contain annoucments';

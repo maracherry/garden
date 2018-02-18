@@ -1,22 +1,7 @@
 <?php
 //Db connector by Nicole McIntosh 
+include 'db_con.php';
 
-//connects to database, uses defaults, otherwise will error out
-function db_connect($host = "localhost", $dbuser = "webdb", $pass = "test55", $dbname = "gardenDB")
-{
-	$link = mysqli_connect("localhost","webdb","test55","gardenDB");
-	if ($link)
-	{
-		echo "DB Connected";
-		return $link;
-	}
-	else
-	{
-		echo "unable to connect to MySQL". PHP_EOL;
-		echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    		echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-	}
-}
 function db_close($db_link)
 {
 	if ($db_link)
