@@ -1,4 +1,5 @@
 <?php
+
 function db_connect($host = "localhost", $dbuser = "webdb", $pass = "test55", $dbname = "gardenDB")
 {
         $link = mysqli_connect("localhost","webdb","test55","gardenDB");
