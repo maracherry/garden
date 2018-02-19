@@ -14,17 +14,13 @@ if (is_array($ret))
 	$_SESSION["userID"] = $ret["userId"];
 	$_SESSION["username"] = $ret["name"];
 	$_SESSION["usertype"] = $ret["type"];
-	$url = redirect("index.php");
-	?><meta http-equiv="refresh" content="0; URL='<?php echo $url?>'" />
-<?php	
+	redirect("index.php");
 }
 else
 {
 	echo "Incorrect username or password " .PHP_EOL;
 	echo "<br />";
-	$url = redirect("login.php?error=1");
-	?><meta http-equiv="refresh" content="0; URL='<?php echo $url?>'" />
-<?php
+	redirect("login.php?error=1");
 }
 include 'inc/footer.php';
 ?>
