@@ -22,9 +22,9 @@ function db_select_query($query)
         	$result = mysqli_query($link,$query);
 		if (mysqli_num_rows($result) >= 1)
 		{
-			$row=mysqli_fetch_assoc($result);	
+			//$row=mysqli_fetch_assoc($result);	
 			db_close($link);
-			return $row;
+			return $result;
 		}
 		else
 		{
@@ -35,6 +35,19 @@ function db_select_query($query)
 	else
 	{
 		echo 'ERROR: Not a proper select query'. PHP_EOL;
+	}
+}
+function db_insert_query($query)
+{
+	$link = db_connect();
+	$result = mysqli_query($link,$query);
+	if ($result)
+	{
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
 	}
 }
 

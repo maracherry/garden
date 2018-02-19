@@ -6,6 +6,7 @@ echo '<a href="login.php"> Login </a>';
 if (isset($_SESSION["username"]))
 {
 	display_login($_SESSION["username"]);
+	echo '<a href="logout.php"> logout </a>';
 }
 else
 {
@@ -13,16 +14,11 @@ else
 }
 echo '<br><body>'; 
 //place code for each annoucment here
-echo 'This Section should contain annoucments';
-echo '<h3> New Annoucment </h3><br>';
-?>
-<form action="submit.php" method="post">
-<p> Title: <input type="text" name="title" /></p>
-<p> Contents: <input type="text" name="contents" /></p>
-<p><input type="submit" /></p>
-</form>
-
-<?php
+include 'inc/display_post.php';
+if (isset($_SESSION["username"]))
+{
+	include 'inc/add_post.php';
+}
 echo '</body><br>';
 ?>
 <br>

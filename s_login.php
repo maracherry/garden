@@ -7,13 +7,17 @@ include 'inc/functions.php';
 $username = $_POST['username'];
 $pass = $_POST['pwd'];
 $query = "select * from user where name='".$username."' and password='".$pass."'";
-$ret = db_select_query($query);
-if (is_array($ret))
+$return = db_select_query($query);
+if ($return)
+{
+	$row = mysqli_fetch_assoc($return);
+}
+if (is_array($row))
 {
 	echo "Login Successful".PHP_EOL;
-	$_SESSION["userID"] = $ret["userId"];
-	$_SESSION["username"] = $ret["name"];
-	$_SESSION["usertype"] = $ret["type"];
+	$_SESSION["userID"] = $row["userId"];
+	$_SESSION["username"] = $row["name"];
+	$_SESSION["usertype"] = $row["type"];
 	redirect("index.php");
 }
 else
