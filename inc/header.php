@@ -1,7 +1,8 @@
 <style>
-<?php include 'css/bootstrap.css'; ?>
+<?php include 'css/bootstrap_nm.css'; ?>
 </style>
 <?php
-echo '<h1> Sharehouse Home Page </h1>';
+echo '<div class="card-header"><h1><center>Sharehouse Home Page</center></h1> </div>';
+include 'nav.php';
 ?>
 

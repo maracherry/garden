@@ -1,3 +1,3 @@
 <?php
-	echo 'Thanks for Visiting';
+	echo '<div class="card-footer"><center> Thanks for Visiting </center></div>';
 ?>
