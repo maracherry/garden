@@ -2,7 +2,7 @@
 <?php include 'css/bootstrap_nm.css'; ?>
 </style>
 <?php
-echo '<div class="card-header"><h1><center>Sharehouse Home Page</center></h1> </div>';
+echo '<div class="card-header"><h1><center>'.$_SESSION["sharehouse_name"].'</center></h1> </div>';
 include 'nav.php';
 include 'inc/login_disp.php';
 if (isset($_SESSION["username"]))

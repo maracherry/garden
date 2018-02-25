@@ -1,6 +1,7 @@
 <?php
 include 'inc/session.php';
 include 'inc/header.php'; 
+include 'inc/init.php';
 echo '<div id="main_body">';
 echo '<br><body>'; 
 include 'inc/display_post.php';
