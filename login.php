@@ -1,6 +1,8 @@
-<?php session_start(); ?>
-<?php include 'inc/header.php'; 
+<?php
+include 'inc/header.php'; 
 
+echo '<div id="main_body">';
+echo '<body>';
 if (isset($_GET['error']))
 {
 	echo '<style> h2 { color: red;} </style>';
@@ -13,6 +15,7 @@ echo '<p>Username:  <input type="text" name="username" /> <br />';
 echo '<p>Password:  <input type="password" name="pwd" /> <br />';
 echo '<p> <input type="submit"> Login </p> <br />';
 echo '</form>';
+echo '</body></div>';
 
 ?>
 <?php include 'inc/footer.php'; ?>
