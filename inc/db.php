@@ -49,6 +49,29 @@ function db_insert_query($query)
 	{
 		return FALSE;
 	}
+	db_close($link);
+}
+function db_update_query($query)
+{
+	//duplicate of insert同じ
+	//could return * of rows updated?
+	$link = db_connect();
+	$result = mysqli_query($link,$query);
+	if ($result)
+        {
+                return TRUE;
+        }
+        else
+        {
+                return FALSE;
+        }
+	db_close($link);
+}
+function get_db_error()
+{
+	$link = db_connect();
+	$errorstr = mysqli_error($link);
+	return $errorstr;
 }
 
 ?>
